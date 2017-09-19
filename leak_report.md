@@ -13,3 +13,5 @@ issue on line 41.
 
 This issue might be resolved if a line that frees the variable pointer is placed
 somewhere in the strip function.
+
+EDIT: This issue can be resolved by placing the free statement in the second function rather than the first one, since running the first function and storing it in a variable in the second function, the memory pointer can be accessed in this variable. An if statement was added to ensure that free() would not be run with an empty string.
