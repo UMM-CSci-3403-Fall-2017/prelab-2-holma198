@@ -39,14 +39,19 @@ char* strip(char* str) {
   // Allocate a slot for all the "saved" characters
   // plus one extra for the null terminator.
   result = calloc(size-num_spaces+1, sizeof(char));
+  //returnResult = "";
+
   // Copy in the "saved" characters.
   for (i=first_non_space; i<=last_non_space; ++i) {
     result[i-first_non_space] = str[i];
   }
   // Place the null terminator at the end of the result string.
   result[i-first_non_space] = '\0';
-
-  return result;
+//  for(i=0;i<strlen(result);++i){
+//	  returnResult[i] = result[i];
+ // }
+ // return returnResult;
+ return result;
 }
 
 /*
@@ -66,7 +71,6 @@ int is_clean(char* str) {
   // 0 if they're equal, and a positive value if the first is
   // greater than the second.
   result = strcmp(str, cleaned);
-
   return result == 0;
 }
 
